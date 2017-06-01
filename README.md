@@ -1,22 +1,24 @@
-# native-echarts
+# react-native-charting
 
-[![NPM Version](https://img.shields.io/npm/v/native-echarts.svg?style=flat)](https://www.npmjs.org/package/native-echarts)
-  [![npm](https://img.shields.io/npm/dm/native-echarts.svg?style=flat)](https://www.npmjs.org/package/native-echarts)
-  [![License](http://img.shields.io/npm/l/native-echarts.svg?style=flat)](https://raw.githubusercontent.com/somonus/react-native-echarts/master/LICENSE.md)
-  
+[![NPM Version](https://img.shields.io/npm/v/native-echarts.svg?style=flat)](https://www.npmjs.org/package/react-native-charting)
+  [![npm](https://img.shields.io/npm/dm/native-echarts.svg?style=flat)](https://www.npmjs.org/package/react-native-charting)
+  [![License](http://img.shields.io/npm/l/native-echarts.svg?style=flat)](https://raw.githubusercontent.com/superandrew213/react-native-charting/master/LICENSE.md)
+
+  Originally forked from [native-echarts](https://github.com/somonus/react-native-echarts).
+
 ## install
 
-$ npm install native-echarts --save
+$ npm install react-native-charts --save
 
 ## Usage
 
-The Usage is complete consistent with Echarts
+react-native-charts uses [Echarts](https://github.com/ecomfe/echarts) The Usage is complete consistent with Echarts
 
 component props:
 
-* *option* (object): The option for echarts: [Documentation](http://echarts.baidu.com/option.html#title)。 
-* *width* (number): The width of the chart. The default value is the outer container width. 
-* *height* (number): The height of the chart. The default value is 400. 
+* *option* (object): The option for echarts: [Documentation](http://echarts.baidu.com/option.html#title)。
+* *width* (number): The width of the chart. The default value is the outer container width.
+* *height* (number): The height of the chart. The default value is 400.
 
 
 ```js
@@ -33,20 +35,20 @@ export default class app extends Component {
   render() {
     const option = {
       title: {
-          text: 'ECharts demo'
+        text: 'ECharts demo'
       },
       tooltip: {},
       legend: {
-          data:['销量']
+        data:['销量']
       },
       xAxis: {
-          data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+        data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
       },
       yAxis: {},
       series: [{
-          name: '销量',
-          type: 'bar',
-          data: [5, 20, 36, 10, 10, 20]
+        name: '销量',
+        type: 'bar',
+        data: [5, 20, 36, 10, 10, 20]
       }]
     };
     return (
@@ -77,7 +79,7 @@ Open the xcode project in the ios directory and click run
 
 screenshots：
 
-![image](https://github.com/somonus/react-native-echarts/blob/master/example/demoIOS.png)
+![image](https://github.com/superandrew213/react-native-charting/blob/master/example/demoIOS.png)
 
 ### Android
 
@@ -85,8 +87,8 @@ Open the Android project in the android directory with Android Studio and click 
 
 screenshots：
 
-![image](https://github.com/somonus/react-native-echarts/blob/master/example/demoAndroid.png)
+![image](https://github.com/superandrew213/react-native-charting/blob/master/example/demoAndroid.png)
 
 ## License
 
-native-echarts is released under the MIT license.
+react-native-charting is released under the MIT license.
