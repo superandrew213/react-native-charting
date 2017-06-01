@@ -2,6 +2,10 @@
 
   Originally forked from [native-echarts](https://github.com/somonus/react-native-echarts).
 
+  react-native-charting uses [Echarts](https://github.com/ecomfe/echarts).
+
+  Works for both iOS & Android using WebView.
+
 ## Install
 
 `$ npm i --save react-native-charting`
@@ -16,7 +20,7 @@ Nothing else to do.
 
 ## Usage
 
-react-native-charting uses [Echarts](https://github.com/ecomfe/echarts). The Usage is complete consistent with Echarts.
+The Usage is complete consistent with Echarts.
 
 component props:
 
