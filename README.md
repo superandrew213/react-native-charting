@@ -1,24 +1,29 @@
 # react-native-charting
 
-[![NPM Version](https://img.shields.io/npm/v/native-echarts.svg?style=flat)](https://www.npmjs.org/package/react-native-charting)
-  [![npm](https://img.shields.io/npm/dm/native-echarts.svg?style=flat)](https://www.npmjs.org/package/react-native-charting)
-  [![License](http://img.shields.io/npm/l/native-echarts.svg?style=flat)](https://raw.githubusercontent.com/superandrew213/react-native-charting/master/LICENSE.md)
-
   Originally forked from [native-echarts](https://github.com/somonus/react-native-echarts).
 
-## install
+## Install
 
-$ npm install react-native-charts --save
+`$ npm i --save react-native-charting`
+
+**Android**
+
+Copy `./node_modules/react-native-charting/src/components/Echarts/echart.html` to `./android/app/src/main/assets/`
+
+**iOS**
+
+Nothing else to do.
 
 ## Usage
 
-react-native-charts uses [Echarts](https://github.com/ecomfe/echarts) The Usage is complete consistent with Echarts
+react-native-charting uses [Echarts](https://github.com/ecomfe/echarts). The Usage is complete consistent with Echarts.
 
 component props:
 
 * *option* (object): The option for echarts: [Documentation](http://echarts.baidu.com/option.html#title)。
 * *width* (number): The width of the chart. The default value is the outer container width.
 * *height* (number): The height of the chart. The default value is 400.
+* *onPress* (function): Returns event [object](https://ecomfe.github.io/echarts-doc/public/en/api.html#events.Mouse%20events).
 
 
 ```js
@@ -29,7 +34,7 @@ import {
   Text,
   View
 } from 'react-native';
-import Echarts from 'native-echarts';
+import Echarts from 'react-native-charting';
 
 export default class app extends Component {
   render() {
@@ -62,32 +67,13 @@ AppRegistry.registerComponent('app', () => app);
 ```
 
 
-
-##Example
-
-*run demo*
-
-```
-cd example
-npm install
-npm start
-```
-
 ### IOS
 
-Open the xcode project in the ios directory and click run
-
-screenshots：
-
-![image](https://github.com/superandrew213/react-native-charting/blob/master/example/demoIOS.png)
+![image](https://github.com/superandrew213/react-native-charting/blob/master/demoIOS.png)
 
 ### Android
 
-Open the Android project in the android directory with Android Studio and click run.
-
-screenshots：
-
-![image](https://github.com/superandrew213/react-native-charting/blob/master/example/demoAndroid.png)
+![image](https://github.com/superandrew213/react-native-charting/blob/master/demoAndroid.png)
 
 ## License
 
