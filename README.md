@@ -8,7 +8,7 @@
 
 **Android**
 
-Copy `./node_modules/react-native-charting/src/components/Echarts/echart.html` to `./android/app/src/main/assets/`
+Copy `./node_modules/react-native-charting/src/components/Echarts/echart.html` to `./android/app/src/main/assets/`. Don't remove `./node_modules/react-native-charting/src/components/Echarts/echart.html`.
 
 **iOS**
 
