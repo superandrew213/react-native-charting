@@ -1,7 +1,7 @@
 {
-  "name": "native-echarts",
-  "version": "0.3.0",
-  "description": "echarts for react-native",
+  "name": "react-native-charting",
+  "version": "0.1.0",
+  "description": "Charts for react-native using Echarts",
   "main": "src/index.js",
   "directories": {
     "example": "example"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/somonus/react-native-echarts.git"
+    "url": "git+https://github.com/superandrew213/react-native-charting.git"
   },
   "keywords": [
     "react-native",
@@ -19,13 +19,10 @@
     "chart",
     "charts"
   ],
-  "author": "somonus",
+  "author": "Andrew Shini",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/somonus/react-native-echarts/issues"
+    "url": "https://github.com/superandrew213/react-native-charting/issues"
   },
-  "homepage": "https://github.com/somonus/react-native-echarts#readme",
-  "dependencies": {
-    "echarts": "3.2.3"
-  }
+  "homepage": "https://github.com/superandrew213/react-native-charting"
 }
