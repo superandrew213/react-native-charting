@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import { WebView, View, StyleSheet } from 'react-native';
+import { WebView, View, StyleSheet, Platform } from 'react-native';
 import renderChart from './renderChart';
 
-export default class App extends Component {
+const SOURCE = Platform.select({
+  ios: require('./echart.html'),
+  android: __DEV__
+    ? require('./echart.html')
+    : { uri: 'file:///android_asset/echart.html' },
+});
+
+export default class extends Component {
   componentWillReceiveProps(nextProps) {
-    if(nextProps.option !== this.props.option) {
-      this.refs.chart.reload();
+    if (nextProps.option !== this.props.option) {
+      this.chart.reload();
     }
   }
 
   render() {
     return (
-      <View style={{flex: 1, height: this.props.height || 400,}}>
+      <View style={{ flex: 1, height: this.props.height || 400 }}>
         <WebView
-          ref="chart"
-          scrollEnabled = {false}
-          injectedJavaScript = {renderChart(this.props)}
+          ref={ref => this.chart = ref}
+          scrollEnabled={false}
+          injectedJavaScript={renderChart(this.props)}
           style={{
             height: this.props.height || 400,
           }}
-          source={require('./tpl.html')}
-          onMessage={event => this.props.onPress ? this.props.onPress(JSON.parse(event.nativeEvent.data)) : null}
+          source={SOURCE}
+          onMessage={event => this.props.onPress
+            ? this.props.onPress(JSON.parse(event.nativeEvent.data))
+            : {}
+          }
         />
       </View>
     );
