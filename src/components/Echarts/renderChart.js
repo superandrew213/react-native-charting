@@ -1,6 +1,6 @@
 import toString from '../../util/toString';
 
-export default function renderChart(props) {
+export default props => {
   const height = `${props.height || 400}px`;
   const width = props.width ? `${props.width}px` : 'auto';
   return `
@@ -21,5 +21,5 @@ export default function renderChart(props) {
       });
       window.postMessage(paramsString);
     });
-  `
-}
+  `;
+};
