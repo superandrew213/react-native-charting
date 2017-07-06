@@ -61,7 +61,7 @@ export default class app extends Component {
       }]
     };
     return (
-      <Echarts option={option} height={300} />
+      <Echarts option={option} height={300} onPress={params => console.log(params)} />
     );
   }
 }
