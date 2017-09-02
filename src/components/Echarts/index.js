@@ -21,16 +21,15 @@ export default class extends Component {
       <View style={{ flex: 1, height: this.props.height || 400 }}>
         <WebView
           ref={ref => this.chart = ref}
-          scrollEnabled={false}
-          injectedJavaScript={renderChart(this.props)}
-          style={{
-            height: this.props.height || 400,
-          }}
+          style={{ height: this.props.height || 400 }}
           source={SOURCE}
+          injectedJavaScript={renderChart(this.props)}
           onMessage={event => this.props.onPress
             ? this.props.onPress(JSON.parse(event.nativeEvent.data))
             : {}
           }
+          scrollEnabled={false}
+          scalesPageToFit={Platform.select({ ios: false, android: true })}
         />
       </View>
     );
