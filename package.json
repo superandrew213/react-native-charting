@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/superandrew213/react-native-charting/issues"
   },
-  "homepage": "https://github.com/superandrew213/react-native-charting"
+  "homepage": "https://github.com/superandrew213/react-native-charting",
+  "dependencies": {
+    "react-native-webview": "^6.8.0"
+  }
 }

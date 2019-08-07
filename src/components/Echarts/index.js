@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { WebView, View, StyleSheet, Platform } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
+import WebView from 'react-native-webview'
 import renderChart from './renderChart';
 
 const SOURCE = Platform.select({
