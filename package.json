@@ -22,7 +22,7 @@
     "url": "https://github.com/superandrew213/react-native-charting/issues"
   },
   "homepage": "https://github.com/superandrew213/react-native-charting",
-  "dependencies": {
+  "peerDependencies": {
     "react-native-webview": "^6.8.0"
   }
 }
