@@ -31,6 +31,7 @@ export default class extends Component {
           }
           scrollEnabled={false}
           originWhitelist={['*']}
+          scalesPageToFit={Platform.select({ android: false })}
         />
       </View>
     );
