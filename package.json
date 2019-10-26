@@ -1,6 +1,6 @@
 {
   "name": "react-native-charting",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Charts for react-native using Echarts",
   "main": "src/index.js",
   "scripts": {
