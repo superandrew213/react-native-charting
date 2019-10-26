@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Container, Echarts } from './components'
 
 export default class App extends Component {
@@ -7,6 +7,6 @@ export default class App extends Component {
       <Container width={this.props.width}>
         <Echarts {...this.props} />
       </Container>
-    );
+    )
   }
 }
