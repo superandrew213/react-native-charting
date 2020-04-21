@@ -7,8 +7,12 @@ export default (props) => {
 (function() {
   document.getElementById('main').style.height = '${height}';
   document.getElementById('main').style.width = '${width}';
+
   var myChart = echarts.init(document.getElementById('main'));
+
   myChart.setOption(${toString(props.option)});
+
+  // Send to RN
   myChart.on('click', function(params) {
     var seen = [];
     var paramsString = JSON.stringify(params, function(key, val) {
@@ -35,6 +39,14 @@ export default (props) => {
     });
     window.ReactNativeWebView.postMessage(paramsString);
   });
+
+  // Receive from RN
+  window.addEventListener('message', message => {
+    // delete message.data.dataZoom
+    myChart.setOption(message.data, {
+      notMerge: true,
+    });
+  })
 })();
   `
 }

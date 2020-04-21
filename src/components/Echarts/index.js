@@ -11,7 +11,10 @@ const SOURCE = Platform.select({
 export default class extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.option !== this.props.option) {
-      this.chart.reload()
+      this.chart.injectJavaScript(`
+        window.postMessage(${JSON.stringify(nextProps.option)}, "*");
+        true;
+      `)
     }
   }
 
