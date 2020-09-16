@@ -45,6 +45,7 @@ export default class extends Component {
           scrollEnabled={false}
           originWhitelist={['*']}
           scalesPageToFit={Platform.select({ android: false })}
+          renderLoading={this.props.renderLoading}
           // To stop parent receiving touch events and scroll etc
           // Only required for Android (iOS already does this) but let's keep it for iOS too
           {...panResponder.panHandlers}
