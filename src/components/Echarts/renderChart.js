@@ -1,6 +1,6 @@
 import toString from '../../utils/toString'
 
-export default (props) => {
+export default props => {
   const height = `${props.height || 400}px`
   const width = props.width ? `${props.width}px` : 'auto'
   return `
@@ -9,8 +9,22 @@ export default (props) => {
   document.getElementById('main').style.width = '${width}';
 
   var myChart = echarts.init(document.getElementById('main'));
+  var options = ${toString(props.option)};
 
-  myChart.setOption(${toString(props.option)});
+  function setFunctionsFromString(obj) {
+    for (var k in obj) {
+      if (typeof obj[k] === "object" && obj[k] != null) {
+        setFunctionsFromString(obj[k]);
+      } else {
+        if (typeof obj[k] === "string" && (obj[k].startsWith("function") || obj[k].startsWith("()"))) {
+          obj[k] = new Function("return " + obj[k])();
+        }
+      }
+    }
+  }
+  setFunctionsFromString(options);
+
+  myChart.setOption(options);
 
   // Send to RN
   myChart.on('click', function(params) {
@@ -43,10 +57,13 @@ export default (props) => {
   // Receive from RN
   window.addEventListener('message', message => {
     // delete message.data.dataZoom
-    myChart.setOption(message.data, {
+    var options = setFunctionsFromString(message.data)
+    myChart.setOption(options, {
       notMerge: true,
     });
   })
+
+  return true;
 })();
   `
 }
