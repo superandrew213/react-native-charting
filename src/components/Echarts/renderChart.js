@@ -57,7 +57,10 @@ export default props => {
   // Receive from RN
   window.addEventListener('message', message => {
     // delete message.data.dataZoom
-    var options = setFunctionsFromString(message.data)
+    var options = message.data;
+    
+    setFunctionsFromString(options);
+
     myChart.setOption(options, {
       notMerge: true,
     });
