@@ -25,10 +25,20 @@ export default class extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, height: this.props.height || 400 }}>
+      <View
+        style={{
+          flex: 1,
+          height: this.props.height || 400,
+          overflow: 'hidden',
+        }}
+      >
         <WebView
           ref={ref => (this.chart = ref)}
-          style={{ height: this.props.height || 400 }}
+          style={[
+            { height: this.props.height || 400 },
+            // Try fix: https://github.com/react-native-webview/react-native-webview/issues/430#issuecomment-474101770
+            Platform.select({ android: { opacity: 0.99 }, ios: {} }),
+          ]}
           source={SOURCE}
           injectedJavaScript={renderChart(this.props)}
           onMessage={event => {
